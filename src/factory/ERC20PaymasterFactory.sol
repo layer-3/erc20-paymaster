@@ -12,3 +12,15 @@ contract ERC20PaymasterFactory is PaymasterFactory, OracleFactory {
         address _owner
     ) Ownable(_owner) {}
 }
+
+contract ERC20PaymasterOnlyFactory is PaymasterFactory {
+    constructor(
+        address _owner
+    ) Ownable(_owner) {}
+}
+
+contract ERC20OracleOnlyFactory is OracleFactory {
+    constructor(
+        address _owner
+    ) Ownable(_owner) {}
+}
