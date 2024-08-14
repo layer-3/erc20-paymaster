@@ -1,7 +1,9 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {ERC20PaymasterOnlyFactory, ERC20OracleOnlyFactory, PaymasterVersion} from "../src/factory/ERC20PaymasterFactory.sol";
+import {PaymasterVersion} from "../src/factory/ERC20PaymasterFactory.sol";
+import {ERC20PaymasterOnlyFactory} from "../src/factory/ERC20PaymasterOnlyFactory.sol";
+import {ERC20OracleOnlyFactory} from "../src/factory/ERC20OracleOnlyFactory.sol";
 import {IERC20Metadata} from "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
 import {IOracle} from "../src/interfaces/oracles/IOracle.sol";
 

@@ -1,7 +1,8 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {ERC20PaymasterOnlyFactory, ERC20OracleOnlyFactory} from "../src/factory/ERC20PaymasterFactory.sol";
+import {ERC20PaymasterOnlyFactory} from "../src/factory/ERC20PaymasterOnlyFactory.sol";
+import {ERC20OracleOnlyFactory} from "../src/factory/ERC20OracleOnlyFactory.sol";
 
 contract DeployFactory is Script {
   function run() public {
