@@ -6,11 +6,9 @@ This document describes the deployment process of the ERC20 paymaster and the ac
 
 ### Foundry
 
-Deployments are done using the `foundry` tool. Make sure you have it installed and up-to-date.
+Deployments are done using the `foundry` toolchain. Make sure you have it installed.
 
-```shell
-foundryup
-```
+Read more about installation [on their official documentation](https://book.getfoundry.sh/getting-started/installation).
 
 ### Dependencies
 
@@ -28,7 +26,7 @@ However, it is possible to operate with only 1 liquidity pool, Token <> ETH. In 
 #### Liqiudity pool
 
 Token <> ETH liquidity pool is required for the operation of the ERC20 paymaster. It is used by the TwapOracle to provide the price feed for the ERC20 paymaster.
-Liqiudity pool deployment is outside the scope of this document. Addresses of the deployed pools on different chains should have been provided to you.
+Liqiudity pool deployment is outside the scope of this document.
 
 ### Factories
 
@@ -66,7 +64,7 @@ Below commands require some parameters and environment variables:
 - `$POOL_NATIVE_TOKEN_ADDRESS` - the address of the native token FROM THE LIQUIDITY POOL.
 - `$TOKEN_ADDRESS` - the address of the token that the paymaster will operate with.
 - `$PAYMASTER_OWNER_ADDRESS` - the address of the paymaster owner, that will be able to change the price markup.
-- <price_markup> - the price markup, where 1000000 means 100%. It is used to calculate the price of the token in the paymaster. For example, 100% markup and that the user will pay at the actual price, and 120% means the user pays 20% more.
+- <price_markup> - the price markup, where 1000000 means 100%. It is used to calculate the price of the token in the paymaster. For example, 100% markup and that the user will pay at the actual price, and 120% means the user pays 20% more. Possible values are from 0 to 4294967295.
 - <max_price_markup> - the maximum price markup that the paymaster owner can set.
 
 To deploy FixedOracle: run:
@@ -114,6 +112,8 @@ You need to add fee token address as key and paymaster address as a value to `pa
   ]
 }
 ```
+
+Where `<fee_token_address>` is the address of the token that the paymaster will operate with, and `<paymaster_address>` is the address of the deployed ERC20 paymaster.
 
 ## Operation
 
